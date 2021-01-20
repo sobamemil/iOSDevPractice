@@ -17,6 +17,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // 루트 뷰 컨트롤러를 UITabBarController로 캐스팅
+        if let tbC = self.window?.rootViewController as? UITabBarController {
+            // 탭 바에서 탭 바 아이템 배열을 가져옴
+            if let tbItems = tbC.tabBar.items {
+                // 탭 바 아이템에 커스텀 이미지 등록
+                tbItems[0].image = UIImage(named: "designbump")?.withRenderingMode(.alwaysOriginal)
+                tbItems[1].image = UIImage(named: "rss")?.withRenderingMode(.alwaysOriginal)
+                tbItems[2].image = UIImage(named: "facebook")?.withRenderingMode(.alwaysOriginal)
+                
+                // 탭 바 아이템에 커스텀 이미지 등록
+//                tbItems[0].image = UIImage(named: "calendar.png")
+//                tbItems[1].image = UIImage(named: "file-tree")
+//                tbItems[2].image = UIImage(named: "photo")
+                
+                // 탭 바 아이템을 전체 순회하면서 selectedImage 속성에 이미지를 설정
+                for tbItem in tbItems {
+                    let image = UIImage(named: "checkmark")?.withRenderingMode(.alwaysOriginal)
+                    tbItem.selectedImage = image
+                }
+                
+                // 탭 바 아이템에 타이틀을 설정
+                tbItems[0].title = "calendar"
+                tbItems[1].title = "file"
+                tbItems[2].title = "photo"
+                
+//                // 탭 바 아이템의 이미지 색상을 변경
+//                tbC.tabBar.tintColor = .white // 선택된 탭 바 아이템의 색상
+//                tbC.tabBar.unselectedItemTintColor = .gray // 선택되지 않은 나머지 탭 바 아이템의 색상
+//
+//                // 탭 바에 배경 이미지를 설정
+//                tbC.tabBar.backgroundImage = UIImage(named: "menubar-bg-mini")
+//                let image = UIImage(named: "menubar-bg-mini.png")?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 15)
+//                tbC.tabBar.backgroundImage = image
+//                let image = UIImage(named: "connectivity-bar")?.stretchableImage(withLeftCapWidth: 0, topCapHeight: 0)
+//                tbC.tabBar.backgroundImage = image
+//                tbC.tabBar.backgroundColor = .white
+                
+                
+
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
