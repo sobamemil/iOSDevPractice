@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     var paramEmail: UITextField! // 이메일 입력 필드
     var paramUpdate: UISwitch! // 스위치 객체
     var paramInterval: UIStepper! // 스테퍼
+    var txtUpdate: UILabel! // 스위치 컨트롤의 값을 표현할 레이블
+    var txtInterval: UILabel! // 스테퍼 컨트롤의 값을 표현할 레이블
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,7 @@ class ViewController: UIViewController {
         
         // 이메일 레이블을 생성하고 영역과 기본 문구를 설정
         let lblEmail = UILabel()
-        lblEmail.frame = CGRect(x: 30, y: 120, width: 100, height: 30)
+        lblEmail.frame = CGRect(x: 30, y: 100, width: 100, height: 30)
         lblEmail.text = "이메일"
         
         // 레이블의 폰트를 설정
@@ -53,6 +55,10 @@ class ViewController: UIViewController {
         self.paramEmail.borderStyle = .roundedRect
         self.paramEmail.placeholder = "이메일 예) sieh96@naver.com"
         
+        // 첫 글자 자동 대문자 처리, 자동 맞춤법 수정 안 함
+        self.paramEmail.autocapitalizationType = UITextAutocapitalizationType.none
+        self.paramEmail.autocorrectionType = UITextAutocorrectionType.no
+        
         self.view.addSubview(self.paramEmail)
         
         // 스위치 객체를 생성
@@ -74,6 +80,38 @@ class ViewController: UIViewController {
         self.paramInterval.value = 0 // 초기값 설정
         
         self.view.addSubview(self.paramInterval)
+        
+        // 스위치 객체의 값을 표현할 레이블을 추가
+        self.txtUpdate = UILabel()
+        self.txtUpdate.frame = CGRect(x: 250, y: 150, width: 100, height: 30)
+        self.txtUpdate.font = UIFont.systemFont(ofSize: 12)
+        self.txtUpdate.textColor = UIColor.red // 텍스트의 색상 설정
+        self.txtUpdate.text = "갱신함" // "갱신함" or "갱신하지 않음"
+        
+        self.view.addSubview(self.txtUpdate)
+        
+        // 스테퍼의 값을 텍스트로 표현할 레이블을 추가
+        self.txtInterval = UILabel()
+        self.txtInterval.frame = CGRect(x: 250, y: 200, width: 100, height: 30)
+        self.txtInterval.font = UIFont.systemFont(ofSize: 12)
+        self.txtInterval.textColor = UIColor.red
+        self.txtInterval.text = "0분마다"
+        
+        self.view.addSubview(self.txtInterval)
+        
+        // 스위치와 스테퍼 컨트롤의 Value Changed 이벤트를 각각 액션 메소드에 연결
+        self.paramUpdate.addTarget(self, action: #selector(presentUpdateValue(_:)), for: .valueChanged)
+        self.paramInterval.addTarget(self, action: #selector(presentIntervalValue(_:)), for: .valueChanged)
+    }
+    
+    // 스위치와 상호반응할 액션 메소드
+    @objc func presentUpdateValue(_ sender: UISwitch) {
+        self.txtUpdate.text = (sender.isOn == true ? "갱신함" : "갱신하지 않음")
+    }
+    
+    // 스테퍼와 상호반응할 액션 메소드
+    @objc func presentIntervalValue(_ sender: UIStepper) {
+        self.txtInterval.text = ("\( Int(sender.value) )분마다")
     }
 
 
