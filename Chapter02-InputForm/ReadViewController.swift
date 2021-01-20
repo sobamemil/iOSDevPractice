@@ -32,7 +32,7 @@ class ReadViewController: UIViewController {
         // 전달받은 값을 레이블에 표시
         email.text = "전달받은 이메일 : \(self.pEmail!)"
         update.text = "업데이트 여부 : \(self.pUpdate == true ? "업데이트 함" : "업데이트 안 함")"
-        interval.text = "\(self.pInterval!)분마다"
+        interval.text = "\( Int(self.pInterval!) )분마다"
         
         // 레이블을 루트 뷰에 추가
         self.view.addSubview(email)
