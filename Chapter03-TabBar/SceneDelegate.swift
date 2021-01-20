@@ -37,12 +37,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     let image = UIImage(named: "checkmark")?.withRenderingMode(.alwaysOriginal)
                     tbItem.selectedImage = image
                     
-                    // 탭 바 아이템별 텍스트 색상 속성을 설정
-                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .disabled)
-                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
+//                    // 탭 바 아이템별 텍스트 색상 속성을 설정
+//                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .disabled)
+//                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
+//                    
+//                    // 전체 아이템의 폰트 크기를 설정
+//                    tbItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 15)], for: .normal)
                     
-                    // 전체 아이템의 폰트 크기를 설정
-                    tbItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 15)], for: .normal)
+                    // 외형 프록시 객체를 이용하여 아이템의 타이틀 색상과 폰트 크기를 설정
+                    let tbItemProxy = UITabBarItem.appearance()
+                    tbItemProxy.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .disabled)
+                    tbItemProxy.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
+                    tbItemProxy.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 15)], for: .normal)
                 }
                 
                 // 탭 바 아이템에 타이틀을 설정
