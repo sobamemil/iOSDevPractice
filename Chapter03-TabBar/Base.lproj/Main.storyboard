@@ -12,7 +12,7 @@
         <!--Item-->
         <scene sceneID="eeJ-i5-H38">
             <objects>
-                <viewController id="96G-kX-g5D" sceneMemberID="viewController">
+                <viewController id="96G-kX-g5D" customClass="SecondViewController" customModule="Chapter03_TabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xki-Pg-FKc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4h-ve-lrf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-936" y="852"/>
+            <point key="canvasLocation" x="-197" y="852"/>
         </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
@@ -39,12 +39,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="852"/>
+            <point key="canvasLocation" x="-938" y="852"/>
         </scene>
         <!--Item-->
         <scene sceneID="pff-Go-Xvc">
             <objects>
-                <viewController id="ktQ-ws-kGE" sceneMemberID="viewController">
+                <viewController id="ktQ-ws-kGE" customClass="ThirdViewController" customModule="Chapter03_TabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uYa-im-BO7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

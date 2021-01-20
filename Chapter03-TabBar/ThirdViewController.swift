@@ -13,7 +13,7 @@ class ThirdViewController: UIViewController {
         
         let title = UILabel(frame: CGRect(x: 0, y: 100, width: 100, height: 30))
         
-        title.text = "세 번쨰 탭"
+        title.text = "세 번째 탭"
         title.textColor = UIColor.red
         title.textAlignment = .center
         title.font = UIFont.systemFont(ofSize: 14)
@@ -23,8 +23,8 @@ class ThirdViewController: UIViewController {
         
         self.view.addSubview(title)
         
-        self.tabBarItem.image = UIImage(named: "photo.png")
-        self.tabBarItem.title = "photo"
+//        self.tabBarItem.image = UIImage(named: "photo.png")
+//        self.tabBarItem.title = "photo"
     }
     
 }
