@@ -31,14 +31,24 @@ class ViewController: UIViewController {
         // 수퍼 뷰에 추가
         self.view.addSubview(title)
         
-        // 탭 바 아이템에 커스텀 이미지를 등록하고 탭 이름을 입력
-        self.tabBarItem.image = UIImage(named: "calendar.png")
-        self.tabBarItem.title = "Calender"
-        
-        
-        
+//        // 탭 바 아이템에 커스텀 이미지를 등록하고 탭 이름을 입력
+//        self.tabBarItem.image = UIImage(named: "calendar.png")
+//        self.tabBarItem.title = "Calender"
     }
 
+    // 화면을 탭하면 이 메소드가 호출
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let tabBar = self.tabBarController?.tabBar
+        
+//        // 탭 바가 현재 숨겨진 상태라면 노출, 현재 노출된 상태라면 숨김
+//        tabBar?.isHidden = (tabBar?.isHidden == true) ? false : true
+        
+        UIView.animate(withDuration: TimeInterval(0.15)) {
+            // alpha 값이 0이면 1로, 1이면 0으로 바꿈
+            // 호출될 때마다 점점 투명해지고 다시 점점 진해짐
+            tabBar?.alpha = (tabBar?.alpha == 0 ? 1 : 0)
+        }
+    }
 
 }
 
