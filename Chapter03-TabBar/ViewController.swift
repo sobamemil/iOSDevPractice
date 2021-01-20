@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         self.view.addSubview(title)
         
         // 탭 바 아이템에 커스텀 이미지를 등록하고 탭 이름을 입력
-        self.tabBarItem.image = UIImage(named: "calender.png")
+        self.tabBarItem.image = UIImage(named: "calendar.png")
         self.tabBarItem.title = "Calender"
         
         
