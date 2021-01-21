@@ -32,4 +32,7 @@ class MapKitViewController: UIViewController {
         point.coordinate = pos
         mapKitView.addAnnotation(point)
     }
+    
+    
+    
 }
