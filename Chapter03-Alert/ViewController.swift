@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         self.view.addSubview(defaultAlertBtn)
     }
     
+    // 알림창
     @objc func defaultAlert(_ sender: Any) {
         // 알림창 정의
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
