@@ -13,6 +13,9 @@
 		57B643F725B8EA3E0066EC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B643F525B8EA3E0066EC45 /* Main.storyboard */; };
 		57B643F925B8EA3F0066EC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B643F825B8EA3F0066EC45 /* Assets.xcassets */; };
 		57B643FC25B8EA3F0066EC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B643FA25B8EA3F0066EC45 /* LaunchScreen.storyboard */; };
+		57B6440A25B8F4410066EC45 /* swift_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57B6440725B8F4410066EC45 /* swift_logo@3x.png */; };
+		57B6440B25B8F4410066EC45 /* arrow-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57B6440825B8F4410066EC45 /* arrow-back@2x.png */; };
+		57B6440C25B8F4410066EC45 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57B6440925B8F4410066EC45 /* more@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		57B643F825B8EA3F0066EC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B643FB25B8EA3F0066EC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B643FD25B8EA3F0066EC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57B6440725B8F4410066EC45 /* swift_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swift_logo@3x.png"; sourceTree = "<group>"; };
+		57B6440825B8F4410066EC45 /* arrow-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-back@2x.png"; sourceTree = "<group>"; };
+		57B6440925B8F4410066EC45 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 		57B643E325B8EA3E0066EC45 = {
 			isa = PBXGroup;
 			children = (
+				57B6440625B8F42F0066EC45 /* Resources */,
 				57B643EE25B8EA3E0066EC45 /* Chapter03-NavigationBar */,
 				57B643ED25B8EA3E0066EC45 /* Products */,
 			);
@@ -65,6 +72,16 @@
 				57B643FD25B8EA3F0066EC45 /* Info.plist */,
 			);
 			path = "Chapter03-NavigationBar";
+			sourceTree = "<group>";
+		};
+		57B6440625B8F42F0066EC45 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57B6440825B8F4410066EC45 /* arrow-back@2x.png */,
+				57B6440925B8F4410066EC45 /* more@2x.png */,
+				57B6440725B8F4410066EC45 /* swift_logo@3x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +141,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B6440A25B8F4410066EC45 /* swift_logo@3x.png in Resources */,
 				57B643FC25B8EA3F0066EC45 /* LaunchScreen.storyboard in Resources */,
+				57B6440B25B8F4410066EC45 /* arrow-back@2x.png in Resources */,
+				57B6440C25B8F4410066EC45 /* more@2x.png in Resources */,
 				57B643F925B8EA3F0066EC45 /* Assets.xcassets in Resources */,
 				57B643F725B8EA3E0066EC45 /* Main.storyboard in Resources */,
 			);
@@ -288,6 +308,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Chapter03-NavigationBar/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,7 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter03-NavigationBar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Chapter03-NavigationBar/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,7 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter03-NavigationBar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
