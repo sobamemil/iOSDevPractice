@@ -13,6 +13,7 @@
 		57B6449225B960EF0066EC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B6449025B960EF0066EC45 /* Main.storyboard */; };
 		57B6449425B960F00066EC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B6449325B960F00066EC45 /* Assets.xcassets */; };
 		57B6449725B960F00066EC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B6449525B960F00066EC45 /* LaunchScreen.storyboard */; };
+		57B644A125B961CD0066EC45 /* CSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B644A025B961CD0066EC45 /* CSTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		57B6449325B960F00066EC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B6449625B960F00066EC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B6449825B960F00066EC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57B644A025B961CD0066EC45 /* CSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				57B6448A25B960EF0066EC45 /* AppDelegate.swift */,
 				57B6448C25B960EF0066EC45 /* SceneDelegate.swift */,
 				57B6448E25B960EF0066EC45 /* ViewController.swift */,
+				57B644A025B961CD0066EC45 /* CSTabBarController.swift */,
 				57B6449025B960EF0066EC45 /* Main.storyboard */,
 				57B6449325B960F00066EC45 /* Assets.xcassets */,
 				57B6449525B960F00066EC45 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B6448F25B960EF0066EC45 /* ViewController.swift in Sources */,
+				57B644A125B961CD0066EC45 /* CSTabBarController.swift in Sources */,
 				57B6448B25B960EF0066EC45 /* AppDelegate.swift in Sources */,
 				57B6448D25B960EF0066EC45 /* SceneDelegate.swift in Sources */,
 			);
@@ -295,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter03-CSTabBar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter03-CSTabBar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
