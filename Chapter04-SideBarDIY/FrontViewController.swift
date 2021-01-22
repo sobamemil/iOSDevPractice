@@ -25,9 +25,14 @@ class FrontViewController: UIViewController {
         self.view.addGestureRecognizer(dragLeft) // 뷰에 제스처 객체를 등록
         
         // 화면을 스와이프하는 제스처를 정의(사이드 메뉴 닫기용)
-        let dragRight = UISwipeGestureRecognizer(target: self, action: #selector(moveSide(_:)))
-        dragRight.direction = .left // 방향은 왼쪽
-        self.view.addGestureRecognizer(dragRight) // 뷰에 제스처 객체를 등록
+        let swipeToLeft = UISwipeGestureRecognizer(target: self, action: #selector(moveSide(_:)))
+        swipeToLeft.direction = .left // 방향은 왼쪽
+        self.view.addGestureRecognizer(swipeToLeft) // 뷰에 제스처 객체를 등록
+        
+        // 화면을 열 때도 스와이프로 가능하게 제스처 정의
+        let swipeToRight = UISwipeGestureRecognizer(target: self, action: #selector(moveSide(_:)))
+        swipeToRight.direction = .right
+        self.view.addGestureRecognizer(swipeToRight)
     }
     
     // 사용자의 액션에 따라 델리게이트 메소드를 호출
@@ -37,8 +42,15 @@ class FrontViewController: UIViewController {
                 self.delegate?.openSideBar(nil)
             }
         } else if sender is UISwipeGestureRecognizer {
-            if self.delegate?.isSideBarShowing == true {
-                self.delegate?.closeSideBar(nil)
+            let swipe = sender as! UISwipeGestureRecognizer
+            if swipe.direction == .left {
+                if self.delegate?.isSideBarShowing == true {
+                    self.delegate?.closeSideBar(nil)
+                }
+            } else {
+                if delegate?.isSideBarShowing == false {
+                    self.delegate?.openSideBar(nil)
+                }
             }
         } else if sender is UIBarButtonItem {
             if self.delegate?.isSideBarShowing == false {
