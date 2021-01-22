@@ -7,7 +7,7 @@
 
 import UIKit
 @IBDesignable
-class CSStepper: UIView {
+class CSStepper: UIControl {
     
     public var leftBtn = UIButton(type: .system) // 좌측 버튼
     public var rightBtn = UIButton(type: .system) // 우측 버튼
@@ -18,6 +18,9 @@ class CSStepper: UIView {
     public var value: Int = 0 {
         didSet { // 프로퍼티의 값이 바뀌면 자동으로 호출
             self.centerLabel.text = String(value)
+            
+            // 이 클래스를 사용하는 객체들에게 valueChanged 이벤트 신호를 보냄
+            self.sendActions(for: .valueChanged)
         }
     }
     
