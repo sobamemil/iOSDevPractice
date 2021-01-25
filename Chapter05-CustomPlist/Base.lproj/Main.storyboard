@@ -32,7 +32,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sieh96@naver.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYA-ew-rIF">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex) sieh96@naver.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYA-ew-rIF">
                                                     <rect key="frame" x="180" y="4" width="214" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -86,6 +86,9 @@
                                                         <segment title="남"/>
                                                         <segment title="여"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="changeGender:" destination="YnU-OR-HqB" eventType="valueChanged" id="FD6-hh-IQa"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -107,6 +110,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-ex-NMe">
                                                     <rect key="frame" x="345" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="changeMarried:" destination="YnU-OR-HqB" eventType="valueChanged" id="dEG-7f-v60"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -122,6 +128,9 @@
                     <navigationItem key="navigationItem" title="사용자 정보" id="yan-i7-bXY"/>
                     <connections>
                         <outlet property="account" destination="dYA-ew-rIF" id="KNN-oT-Abb"/>
+                        <outlet property="gender" destination="KfS-bM-yPI" id="nIS-pN-Vwz"/>
+                        <outlet property="married" destination="HHO-ex-NMe" id="cCE-BR-big"/>
+                        <outlet property="name" destination="Sz3-cL-g21" id="vTg-oS-c2A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQk-FM-Y3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
