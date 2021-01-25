@@ -13,6 +13,7 @@
 		57A2AFE925BE4600007F15F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A2AFE725BE4600007F15F1 /* Main.storyboard */; };
 		57A2AFEB25BE4600007F15F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A2AFEA25BE4600007F15F1 /* Assets.xcassets */; };
 		57A2AFEE25BE4600007F15F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A2AFEC25BE4600007F15F1 /* LaunchScreen.storyboard */; };
+		57A2AFF825BE48D3007F15F1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2AFF725BE48D3007F15F1 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		57A2AFEA25BE4600007F15F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A2AFED25BE4600007F15F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A2AFEF25BE4600007F15F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57A2AFF725BE48D3007F15F1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				57A2AFE525BE4600007F15F1 /* ViewController.swift */,
 				57A2AFE725BE4600007F15F1 /* Main.storyboard */,
 				57A2AFEA25BE4600007F15F1 /* Assets.xcassets */,
+				57A2AFF725BE48D3007F15F1 /* ListViewController.swift */,
 				57A2AFEC25BE4600007F15F1 /* LaunchScreen.storyboard */,
 				57A2AFEF25BE4600007F15F1 /* Info.plist */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				57A2AFE625BE4600007F15F1 /* ViewController.swift in Sources */,
 				57A2AFE225BE4600007F15F1 /* AppDelegate.swift in Sources */,
+				57A2AFF825BE48D3007F15F1 /* ListViewController.swift in Sources */,
 				57A2AFE425BE4600007F15F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter05-UserDefaults";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter05-UserDefaults";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
