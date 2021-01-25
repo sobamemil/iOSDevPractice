@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5717207025BEA4350074DE72 /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5717206F25BEA4350074DE72 /* UserInfo.plist */; };
 		57A2B00725BE6C67007F15F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2B00625BE6C67007F15F1 /* AppDelegate.swift */; };
 		57A2B00925BE6C67007F15F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2B00825BE6C67007F15F1 /* SceneDelegate.swift */; };
 		57A2B00B25BE6C67007F15F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2B00A25BE6C67007F15F1 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5717206F25BEA4350074DE72 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		57A2B00325BE6C67007F15F1 /* Chapter05-CustomPlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter05-CustomPlist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A2B00625BE6C67007F15F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57A2B00825BE6C67007F15F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				57A2B01C25BE7011007F15F1 /* ListViewController.swift */,
 				57A2B00F25BE6C68007F15F1 /* Assets.xcassets */,
 				57A2B01125BE6C68007F15F1 /* LaunchScreen.storyboard */,
+				5717206F25BEA4350074DE72 /* UserInfo.plist */,
 				57A2B01425BE6C68007F15F1 /* Info.plist */,
 			);
 			path = "Chapter05-CustomPlist";
@@ -130,6 +133,7 @@
 				57A2B01325BE6C68007F15F1 /* LaunchScreen.storyboard in Resources */,
 				57A2B01025BE6C68007F15F1 /* Assets.xcassets in Resources */,
 				57A2B00E25BE6C67007F15F1 /* Main.storyboard in Resources */,
+				5717207025BEA4350074DE72 /* UserInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
