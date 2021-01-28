@@ -23,15 +23,22 @@ class ViewController: UIViewController {
         
         let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)"
         
-        sqlite3_open(dbPath, &db) // DB를 연결, db 객체 생성
-        sqlite3_prepare(db, sql, -1, &stmt, nil) // SQL 구문을 전달할 준비, 컴파일된 SQL 구문 객체 생성(stmt)
-        sqlite3_step(stmt) // 컴파일된 SQL 구문 객체를 DB에 전달
-        sqlite3_finalize(stmt) // 컴파일된 SQL 구문 객체를 삭제, 이 때, stmt 해제
-        sqlite3_close(db) // DB 연결 종료, 이 때, db 해제
-        
-        
+        if sqlite3_open(dbPath, &db)  == SQLITE_OK { // DB를 연결, db 객체 생성
+            // 데이터베이스가 잘 연결되었다면
+            if sqlite3_prepare(db, sql, -1, &stmt, nil) == SQLITE_OK { // SQL 구문을 전달할 준비, 컴파일된 SQL 구문 객체 생성(stmt)
+                // SQL 컴파일이 잘 끝났다면
+                if sqlite3_step(stmt) == SQLITE_DONE { // 컴파일된 SQL 구문 객체를 DB에 전달
+                    print("Create Table Success!")
+                }
+                sqlite3_finalize(stmt) // 컴파일된 SQL 구문 객체를 삭제, 이 때, stmt 해제
+            } else {
+                print("Prepare Statement Fail")
+            }
+            sqlite3_close(db) // DB 연결 종료, 이 때, db 해제
+        } else {
+            print("Database Connect Fail")
+            return
+        }
     }
-
-
 }
 
