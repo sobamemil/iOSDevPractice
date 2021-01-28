@@ -16,10 +16,12 @@ class ViewController: UIViewController {
         var db: OpaquePointer? = nil // SQLite 연결 정보를 담을 객체
         var stmt: OpaquePointer? = nil // 컴파일된 SQL을 담을 객체
         
-        // 앱 내 문서 디렉터리 경로에서 SQLite DB 파일을 찾음
-        let fileMgr = FileManager()
-        let docPathURL = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let dbPath = docPathURL.appendingPathComponent("db.sqlite").path
+//        // 앱 내 문서 디렉터리 경로에서 SQLite DB 파일을 찾음
+//        let fileMgr = FileManager()
+//        let docPathURL = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first!
+//        let dbPath = docPathURL.appendingPathComponent("db.sqlite").path
+        
+        let dbPath = "/Users/sobamemil/db.sqlite"
         
         let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)"
         
