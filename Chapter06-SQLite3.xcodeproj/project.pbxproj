@@ -19,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5703762E25C3BB39003B9FBB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		576810BF25C3CA84002A61EA /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		57AC4B9025C29C70002E764B /* Chapter06-SQLite3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter06-SQLite3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AC4B9325C29C70002E764B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AC4B9525C29C70002E764B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 				5703762E25C3BB39003B9FBB /* db.sqlite */,
 				57AC4B9725C29C70002E764B /* ViewController.swift */,
 				57AC4B9925C29C70002E764B /* Main.storyboard */,
+				576810BF25C3CA84002A61EA /* FMDB.h */,
 				57AC4B9C25C29C71002E764B /* Assets.xcassets */,
 				57AC4B9E25C29C71002E764B /* LaunchScreen.storyboard */,
 				57AC4BAD25C29CD0002E764B /* Chapter06-SQLite3-Bridging-Header.h */,
