@@ -20,8 +20,13 @@ class ViewController: UIViewController {
         let fileMgr = FileManager()
         let docPathURL = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first!
         let dbPath = docPathURL.appendingPathComponent("db.sqlite").path
-        
 //        let dbPath = "/Users/sobamemil/db.sqlite" // db가 만들어 졌는지 쉽게 찾기 위한 테스트 경로
+        
+        // dbPath 경로에 파일이 없다면 앱 번들에 만들어 둔 db.sqlite를 가져와 복사
+        if fileMgr.fileExists(atPath: dbPath) == false {
+            let dbSource = Bundle.main.path(forResource: "db", ofType: "sqlite")
+            try! fileMgr.copyItem(atPath: dbSource!, toPath: dbPath)
+        }
         
         let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)"
         
