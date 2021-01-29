@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5703762F25C3BB39003B9FBB /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5703762E25C3BB39003B9FBB /* db.sqlite */; };
 		57AC4B9425C29C70002E764B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AC4B9325C29C70002E764B /* AppDelegate.swift */; };
 		57AC4B9625C29C70002E764B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AC4B9525C29C70002E764B /* SceneDelegate.swift */; };
 		57AC4B9825C29C70002E764B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AC4B9725C29C70002E764B /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5703762E25C3BB39003B9FBB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		57AC4B9025C29C70002E764B /* Chapter06-SQLite3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter06-SQLite3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AC4B9325C29C70002E764B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AC4B9525C29C70002E764B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				57AC4B9325C29C70002E764B /* AppDelegate.swift */,
 				57AC4B9525C29C70002E764B /* SceneDelegate.swift */,
+				5703762E25C3BB39003B9FBB /* db.sqlite */,
 				57AC4B9725C29C70002E764B /* ViewController.swift */,
 				57AC4B9925C29C70002E764B /* Main.storyboard */,
 				57AC4B9C25C29C71002E764B /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				57AC4BA025C29C71002E764B /* LaunchScreen.storyboard in Resources */,
 				57AC4B9D25C29C71002E764B /* Assets.xcassets in Resources */,
 				57AC4B9B25C29C70002E764B /* Main.storyboard in Resources */,
+				5703762F25C3BB39003B9FBB /* db.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
