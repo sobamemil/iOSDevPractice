@@ -4,7 +4,7 @@
 //
 //  Created by 심찬영 on 2021/01/25.
 //
-// UserDefaults를 사용하여 데이터 저장 연습
+// UserDefaults를 사용하여 데이터 저장
 
 import UIKit
 class ListViewConotroller: UITableViewController {
