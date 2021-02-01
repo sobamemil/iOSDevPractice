@@ -134,7 +134,7 @@ class EmployeeDAO {
             
             // Prepared Statement를 위한 인자값
             var params = [Any]()
-            params.appen(param.empName)
+            params.append(param.empName)
             params.append(param.joinDate)
             params.append(param.stateCd.rawValue)
             params.append(param.departCd)
@@ -147,4 +147,17 @@ class EmployeeDAO {
             return false
         }
     }
+    
+    func remove(empCd: Int) -> Bool {
+        do {
+            let sql = "DELETE FROM employee WHERE emp_cd = ? "
+            try self.fmdb.excuteUpdate(sql, values: [empCd])
+            return true
+        } catch let error as NSError {
+            print("Insert Error : \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    
 }
