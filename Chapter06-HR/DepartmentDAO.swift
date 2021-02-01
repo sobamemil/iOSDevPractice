@@ -51,7 +51,7 @@ class DepartmentDAO {
                 ORDER BY depart_cd ASC
             """
             
-            let rs = try self.fmdb.excuteQuery(sql, values: nil)
+            let rs = try self.fmdb.executeQuery(sql, values: nil)
             
             // 결과 집합 추출
             while rs.next() {
@@ -76,7 +76,7 @@ class DepartmentDAO {
             WHERE depart_cd = ?
         """
         
-        let rs = self.fmdb.excuteQuery(sql, withArgumentsIn: [departCd])
+        let rs = self.fmdb.executeQuery(sql, withArgumentsIn: [departCd])
         
         // 결과 집합 처리
         if let _rs = rs { // 결과 집합이 옵셔널 타입으로 반환되므로, 이를 일반 상수에 바인딩하여 해제함
@@ -98,8 +98,8 @@ class DepartmentDAO {
                 INSERT INTO department (depart_title, depart_addr)
                 VALUES (?, ?)
             """
-            try self.fmdb.excuteUpdate(sql, values: [title!, addr!])
-            return TUREAD
+            try self.fmdb.executeUpdate(sql, values: [title!, addr!])
+            return true
         } catch let error as NSError {
             print("Insert Error: \(error.localizedDescription)")
             return false

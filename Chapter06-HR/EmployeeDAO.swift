@@ -45,7 +45,7 @@ class EmployeeDAO {
         // 샌드박스 경로에 hr.sqlite 파일이 없다면 메인 번들에 만들어 둔 파일을 가져와 복사
         if fileMgr.fileExists(atPath: dbPath) == false {
             let dbSource = Bundle.main.path(forResource: "hr", ofType: "sqlite")
-            try! fileMgr.copyItem(atPath: dbSource, toPath: dbPath)
+            try! fileMgr.copyItem(atPath: dbSource!, toPath: dbPath)
         }
         
         // 준비된 데이터베이스 파일을 바탕으로 FMDatabase 객체를 생성
@@ -73,7 +73,7 @@ class EmployeeDAO {
                 ORDER BY employee.depart_cd ASC
             """
             
-            let rs = try self.fmdb.excuteQuery(sql, values: nil)
+            let rs = try self.fmdb.executeQuery(sql, values: nil)
             
             while rs.next() {
                 var record = EmployeeVO()
@@ -103,7 +103,7 @@ class EmployeeDAO {
             WHERE emp_cd = ?
         """
         
-        let rs = self.fmdb.excuteQuery(sql, withArgumentsIn: [empCd])
+        let rs = self.fmdb.executeQuery(sql, withArgumentsIn: [empCd])
         
         // 결과 집합 처리
         if let _rs = rs { // 결과 집합이 옵셔널 타입이므로, 바인딩 변수를 통해 옵셔널 해제
@@ -151,13 +151,11 @@ class EmployeeDAO {
     func remove(empCd: Int) -> Bool {
         do {
             let sql = "DELETE FROM employee WHERE emp_cd = ? "
-            try self.fmdb.excuteUpdate(sql, values: [empCd])
+            try self.fmdb.executeUpdate(sql, values: [empCd])
             return true
         } catch let error as NSError {
             print("Insert Error : \(error.localizedDescription)")
             return false
         }
     }
-    
-    
 }
