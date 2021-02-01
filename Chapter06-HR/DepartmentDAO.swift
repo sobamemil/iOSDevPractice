@@ -52,6 +52,45 @@ class DepartmentDAO {
             """
             
             let rs = try self.fmdb.excuteQuery(sql, values: nil)
+            
+            // 결과 집합 추출
+            while rs.next() {
+                let departCd = rs.int(forColumn: "depart_cd")
+                let departTitle = rs.string(forColumn: "depart_title")
+                let departAddr = rs.string(forColumn: "depart_addr")
+                
+                // append 메소드 호출 시 아래 튜플을 괄호 없이 사용하지 않도록 주의해야 함
+                departList.append( (Int(departCd), departTitle!, departAddr!) )
+            }
+        } catch let error as NSError {
+            print("failed: \(error.localizedDescription)")
+        }
+        return departList
+    }
+    
+    func get(departCd: Int) -> DepartRecord? {
+        // 질의 실행
+        let sql = """
+            SELECT depart_cd, depart_title, depart_addr
+            FROM    department
+            WHERE depart_cd = ?
+        """
+        
+        let rs = self.fmdb.excuteQuery(sql, withArgumentsIn: [departCd])
+        
+        // 결과 집합 처리
+        if let _rs = rs { // 결과 집합이 옵셔널 타입으로 반환되므로, 이를 일반 상수에 바인딩하여 해제함
+            _rs.next()
+            
+            let departId = _rs.int(forColumn: "depart_cd")
+            let departTitle = _rs.string(forColumn: "depart_title")
+            let departAddr = _rs.string(forColumn: "depart_addr")
+            
+            return (Int(departId), departTitle!, departAddr!)
+        } else { // 결과 집합이 없을 경우 nil을 반환
+            return nil
         }
     }
+    
+    
 }
