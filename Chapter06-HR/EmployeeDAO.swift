@@ -52,4 +52,45 @@ class EmployeeDAO {
         let db = FMDatabase(path: dbPath)
         return db
     }()
+    
+    init() {
+        self.fmdb.open()
+    }
+    
+    deinit {
+        self.fmdb.close()
+    }
+    
+    func find() -> [EmployeeVO] {
+        // 반환할 데이터를 담을 [EmployeeVO] 타입의 객체 정의
+        var employeeList = [EmployeeVO]()
+        
+        do {
+            let sql = """
+                SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
+                FROM employee
+                JOIN department On department.depart_cd = employee.depart_cd
+                ORDER BY employee.depart_cd ASC
+            """
+            
+            let rs = try self.fmdb.excuteQuery(sql, values: nil)
+            
+            while rs.next() {
+                var record = EmployeeVO()
+                
+                record.empCd = Int(rs.int(forColumn: "emp_cd"))
+                record.empName = rs.string(forColumn: "emp_name")!
+                record.joinDate = rs.string(forColumn: "join_date")!
+                record.departTitle = rs.string(forColumn: "depart_title")!
+                
+                let cd = Int(rs.int(forColumn: "state_cd")) // DB에서 읽어온 state_cd 값
+                record.stateCd = EmpStateType(rawValue: cd)!
+                
+                employeeList.append(record)
+            }
+        } catch let error as NSError {
+            print("failed: \(error.localizedDescription)")
+        }
+        return employeeList
+    }
 }
