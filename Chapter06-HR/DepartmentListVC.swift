@@ -31,8 +31,8 @@ class DepartmentListVC: UITableViewController {
         self.departList = self.departDAO.find() // 기존 저장된 부서 정보를 가져옴
         self.initUI()
     }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.departList.count
     }
     
@@ -83,5 +83,24 @@ class DepartmentListVC: UITableViewController {
         )) // 확인 버튼
         
         self.present(alert, animated: false, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // 삭제할 행의 departCd를 구함
+        let departCd = self.departList[indexPath.row].departCd
+        
+        // DB에서, 데이터 소스에서, 그리고 테이블 뷰에서 차례대로 삭제
+        if departDAO.remove(departCd: departCd) {
+            self.departList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // 내비게이션 타이틀에도 변경된 부서 정보를 반영
+            let navTitle = self.navigationItem.titleView as! UILabel
+            navTitle.text = "부서 목록 \n" + "총 \(self.departList.count) 개"
+        }
     }
 }

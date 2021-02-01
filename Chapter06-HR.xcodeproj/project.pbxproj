@@ -19,6 +19,11 @@
 		5768110625C3FA75002A61EA /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5768110525C3FA75002A61EA /* hr.sqlite */; };
 		578021E425C79E5700CBB35B /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578021E325C79E5700CBB35B /* DepartmentDAO.swift */; };
 		578021E725C7A97300CBB35B /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578021E625C7A97300CBB35B /* EmployeeDAO.swift */; };
+		578021EA25C7DCCF00CBB35B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 576810F125C3F20B002A61EA /* FMResultSet.m */; };
+		578021EB25C7DCCF00CBB35B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 576810F225C3F20B002A61EA /* FMDatabaseAdditions.m */; };
+		578021EC25C7DCCF00CBB35B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 576810F925C3F20C002A61EA /* FMDatabaseQueue.m */; };
+		578021ED25C7DCCF00CBB35B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 576810F625C3F20B002A61EA /* FMDatabase.m */; };
+		578021EE25C7DCCF00CBB35B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 576810F525C3F20B002A61EA /* FMDatabasePool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +70,6 @@
 		576810C125C3F177002A61EA = {
 			isa = PBXGroup;
 			children = (
-				576810EE25C3F1F9002A61EA /* fmdb */,
 				576810CC25C3F177002A61EA /* Chapter06-HR */,
 				576810CB25C3F177002A61EA /* Products */,
 				576810FB25C3F36D002A61EA /* Frameworks */,
@@ -86,22 +90,6 @@
 				576810CD25C3F177002A61EA /* AppDelegate.swift */,
 				576810CF25C3F177002A61EA /* SceneDelegate.swift */,
 				576810FF25C3F8F3002A61EA /* DepartmentListVC.swift */,
-				5768110525C3FA75002A61EA /* hr.sqlite */,
-				5768110225C3F903002A61EA /* EmployeeListVC.swift */,
-				576810D125C3F177002A61EA /* ViewController.swift */,
-				578021E325C79E5700CBB35B /* DepartmentDAO.swift */,
-				576810D325C3F177002A61EA /* Main.storyboard */,
-				576810D625C3F178002A61EA /* Assets.xcassets */,
-				578021E625C7A97300CBB35B /* EmployeeDAO.swift */,
-				576810D825C3F178002A61EA /* LaunchScreen.storyboard */,
-				576810DB25C3F178002A61EA /* Info.plist */,
-			);
-			path = "Chapter06-HR";
-			sourceTree = "<group>";
-		};
-		576810EE25C3F1F9002A61EA /* fmdb */ = {
-			isa = PBXGroup;
-			children = (
 				576810EF25C3F20B002A61EA /* FMDatabase.h */,
 				576810F625C3F20B002A61EA /* FMDatabase.m */,
 				576810F025C3F20B002A61EA /* FMDatabaseAdditions.h */,
@@ -114,8 +102,17 @@
 				576810FA25C3F271002A61EA /* Chapter06-HR-Bridging-Header.h */,
 				576810F725C3F20C002A61EA /* FMResultSet.h */,
 				576810F125C3F20B002A61EA /* FMResultSet.m */,
+				5768110525C3FA75002A61EA /* hr.sqlite */,
+				5768110225C3F903002A61EA /* EmployeeListVC.swift */,
+				576810D125C3F177002A61EA /* ViewController.swift */,
+				578021E325C79E5700CBB35B /* DepartmentDAO.swift */,
+				576810D325C3F177002A61EA /* Main.storyboard */,
+				576810D625C3F178002A61EA /* Assets.xcassets */,
+				578021E625C7A97300CBB35B /* EmployeeDAO.swift */,
+				576810D825C3F178002A61EA /* LaunchScreen.storyboard */,
+				576810DB25C3F178002A61EA /* Info.plist */,
 			);
-			name = fmdb;
+			path = "Chapter06-HR";
 			sourceTree = "<group>";
 		};
 		576810FB25C3F36D002A61EA /* Frameworks */ = {
@@ -198,11 +195,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				578021E425C79E5700CBB35B /* DepartmentDAO.swift in Sources */,
+				578021EE25C7DCCF00CBB35B /* FMDatabasePool.m in Sources */,
 				576810D225C3F177002A61EA /* ViewController.swift in Sources */,
 				576810CE25C3F177002A61EA /* AppDelegate.swift in Sources */,
 				5768110325C3F903002A61EA /* EmployeeListVC.swift in Sources */,
 				578021E725C7A97300CBB35B /* EmployeeDAO.swift in Sources */,
+				578021EC25C7DCCF00CBB35B /* FMDatabaseQueue.m in Sources */,
+				578021EB25C7DCCF00CBB35B /* FMDatabaseAdditions.m in Sources */,
 				5768110025C3F8F3002A61EA /* DepartmentListVC.swift in Sources */,
+				578021EA25C7DCCF00CBB35B /* FMResultSet.m in Sources */,
+				578021ED25C7DCCF00CBB35B /* FMDatabase.m in Sources */,
 				576810D025C3F177002A61EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter06-HR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Chapter06-HR-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chapter06-HR/Chapter06-HR-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,7 +379,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sobamemil.Chapter06-HR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Chapter06-HR-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Chapter06-HR/Chapter06-HR-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
