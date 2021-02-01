@@ -92,5 +92,28 @@ class DepartmentDAO {
         }
     }
     
+    func create(title: String!, addr: String!) -> Bool {
+        do {
+            let sql = """
+                INSERT INTO department (depart_title, depart_addr)
+                VALUES (?, ?)
+            """
+            try self.fmdb.excuteUpdate(sql, values: [title!, addr!])
+            return TUREAD
+        } catch let error as NSError {
+            print("Insert Error: \(error.localizedDescription)")
+            return false
+        }
+    }
     
+    func remove(departCd: Int) -> Bool {
+        do {
+            let sql = "DELETE FROM department WHERE depart_cd = ? "
+            try self.fmdb.executeUpdate(sql, values: [departCd])
+            return true
+        } catch let error as NSError {
+            print("DELETE Error : \(error.localizedDescription)")
+            return false
+        }
+    }
 }
