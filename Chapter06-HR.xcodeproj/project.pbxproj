@@ -17,6 +17,7 @@
 		5768110025C3F8F3002A61EA /* DepartmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576810FF25C3F8F3002A61EA /* DepartmentListVC.swift */; };
 		5768110325C3F903002A61EA /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768110225C3F903002A61EA /* EmployeeListVC.swift */; };
 		5768110625C3FA75002A61EA /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5768110525C3FA75002A61EA /* hr.sqlite */; };
+		576DB3E925C7F1F70010DD52 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DB3E825C7F1F70010DD52 /* PickerController.swift */; };
 		578021E425C79E5700CBB35B /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578021E325C79E5700CBB35B /* DepartmentDAO.swift */; };
 		578021E725C7A97300CBB35B /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578021E625C7A97300CBB35B /* EmployeeDAO.swift */; };
 		578021EA25C7DCCF00CBB35B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 576810F125C3F20B002A61EA /* FMResultSet.m */; };
@@ -51,6 +52,7 @@
 		576810FF25C3F8F3002A61EA /* DepartmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListVC.swift; sourceTree = "<group>"; };
 		5768110225C3F903002A61EA /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 		5768110525C3FA75002A61EA /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = hr.sqlite; sourceTree = "<group>"; };
+		576DB3E825C7F1F70010DD52 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		578021E325C79E5700CBB35B /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		578021E625C7A97300CBB35B /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 				576810D125C3F177002A61EA /* ViewController.swift */,
 				578021E325C79E5700CBB35B /* DepartmentDAO.swift */,
 				576810D325C3F177002A61EA /* Main.storyboard */,
+				576DB3E825C7F1F70010DD52 /* PickerController.swift */,
 				576810D625C3F178002A61EA /* Assets.xcassets */,
 				578021E625C7A97300CBB35B /* EmployeeDAO.swift */,
 				576810D825C3F178002A61EA /* LaunchScreen.storyboard */,
@@ -196,6 +199,7 @@
 			files = (
 				578021E425C79E5700CBB35B /* DepartmentDAO.swift in Sources */,
 				578021EE25C7DCCF00CBB35B /* FMDatabasePool.m in Sources */,
+				576DB3E925C7F1F70010DD52 /* PickerController.swift in Sources */,
 				576810D225C3F177002A61EA /* ViewController.swift in Sources */,
 				576810CE25C3F177002A61EA /* AppDelegate.swift in Sources */,
 				5768110325C3F903002A61EA /* EmployeeListVC.swift in Sources */,
