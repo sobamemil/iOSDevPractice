@@ -23,4 +23,15 @@ class EmployeeDAO {
             }
         }
     }
+    
+    struct EmployeeVO {
+        var empCd = 0 // 사원 코드
+        var empName = "" // 사원명
+        var joinDate = "" // 입사일
+        var stateCd = EmpStateType.ING // 재직 상태(기본값 : 재직중)
+        var departCd = 0 // 소속 부서 코드
+        var departTitle = "" // 소속 부서명
+    }
+    
+    
 }
