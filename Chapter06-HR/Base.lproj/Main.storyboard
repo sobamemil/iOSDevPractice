@@ -52,7 +52,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dKV-Xs-gbm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fel-r6-EPg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fel-r6-EPg">
+                            <connections>
+                                <action selector="add:" destination="NDO-dm-8uh" id="7iD-YZ-VKr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EwW-8Y-6Is" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
