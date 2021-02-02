@@ -28,6 +28,11 @@ class EmployeeListVC: UITableViewController {
     override func viewDidLoad() {
         self.empList = self.empDAO.find()
         self.initUI()
+        
+        // 당겨서 새로고침 기능
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,5 +128,14 @@ class EmployeeListVC: UITableViewController {
             let navTitle = self.navigationItem.titleView as! UILabel
             navTitle.text = "사원 목록 \n" + "총 \(self.empList.count) 개"
         }
+    }
+    
+    @objc func pullToRefresh(_ sender: Any) {
+        // 새로고침 시 갱신되어야 할 내용들
+        self.empList = self.empDAO.find()
+        self.tableView.reloadData()
+        
+        // 당겨서 새로고침 기능 종료
+        self.refreshControl?.endRefreshing()
     }
 }
