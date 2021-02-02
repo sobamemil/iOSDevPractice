@@ -173,5 +173,8 @@ class EmployeeListVC: UITableViewController {
         // 당긴 거리를 회전 각도로 반환하여 로딩 이미지에 설정
         let ts = CGAffineTransform(rotationAngle: CGFloat(distance / 20))
         self.loadingImg.transform = ts
+        
+        // 배경 뷰의 중심 좌표 설정
+        self.bgCircle.center.y = distance / 2
     }
 }
