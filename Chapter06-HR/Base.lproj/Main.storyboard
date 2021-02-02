@@ -108,6 +108,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="bwx-h9-l7g">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="9SM-0y-KMp">
+                            <connections>
+                                <action selector="editing:" destination="qIJ-1u-Op2" id="jFQ-ee-7ck"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ijz-IJ-mF5">
                             <connections>
                                 <action selector="add:" destination="qIJ-1u-Op2" id="ZGV-Yc-sDa"/>

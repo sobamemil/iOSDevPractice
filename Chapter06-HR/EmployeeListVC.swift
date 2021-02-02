@@ -92,4 +92,32 @@ class EmployeeListVC: UITableViewController {
         
         self.present(alert, animated: false)
     }
+    
+    // 편집 기능 구현
+    @IBAction func editing(_ sender: Any) {
+        if self.isEditing == false { // 현재 편집 모드가 아닐 때
+            self.setEditing(true, animated: true)
+            (sender as? UIBarButtonItem)?.title = "Done"
+        } else { // 현재 편집 모드일 때
+            self.setEditing(false, animated: true)
+            (sender as? UIBarButtonItem)?.title = "Edit"
+        }
+    }
+    
+    // 목록 편집 형식을 결정하는 메소드(삽입 / 삭제)
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
+    }
+    
+    // 목록 편집 버튼을 클릭했을 때 호출되는 메소드
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // 삭제할 행의 empCd를 구함
+        let empCd = self.empList[indexPath.row].empCd
+        
+        // DB에서, 데이터 소스에서, 그리고 테이블 뷰에서 차례대로 삭제
+        if empDAO.remove(empCd: empCd) {
+            self.empList.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
