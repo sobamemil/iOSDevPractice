@@ -61,15 +61,18 @@ class EmployeeDAO {
         self.fmdb.close()
     }
     
-    func find() -> [EmployeeVO] {
+    func find(departCd: Int = 0) -> [EmployeeVO] {
         // 반환할 데이터를 담을 [EmployeeVO] 타입의 객체 정의
         var employeeList = [EmployeeVO]()
         
         do {
+            let condition = departCd == 0 ? "" : "WHERE Employee.depart_cd = \(departCd)"
+            
             let sql = """
                 SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
                 FROM employee
                 JOIN department On department.depart_cd = employee.depart_cd
+                \(condition)
                 ORDER BY employee.depart_cd ASC
             """
             
