@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571DFE0F25C905320071BE5A /* DepartmentInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DFE0E25C905320071BE5A /* DepartmentInfoVC.swift */; };
 		576810CE25C3F177002A61EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576810CD25C3F177002A61EA /* AppDelegate.swift */; };
 		576810D025C3F177002A61EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576810CF25C3F177002A61EA /* SceneDelegate.swift */; };
 		576810D225C3F177002A61EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576810D125C3F177002A61EA /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		571DFE0E25C905320071BE5A /* DepartmentInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentInfoVC.swift; sourceTree = "<group>"; };
 		576810CA25C3F177002A61EA /* Chapter06-HR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter06-HR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		576810CD25C3F177002A61EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		576810CF25C3F177002A61EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				5768110525C3FA75002A61EA /* hr.sqlite */,
 				5768110225C3F903002A61EA /* EmployeeListVC.swift */,
 				576810D125C3F177002A61EA /* ViewController.swift */,
+				571DFE0E25C905320071BE5A /* DepartmentInfoVC.swift */,
 				578021E325C79E5700CBB35B /* DepartmentDAO.swift */,
 				576810D325C3F177002A61EA /* Main.storyboard */,
 				576DB3E825C7F1F70010DD52 /* PickerController.swift */,
@@ -201,6 +204,7 @@
 				578021EE25C7DCCF00CBB35B /* FMDatabasePool.m in Sources */,
 				576DB3E925C7F1F70010DD52 /* PickerController.swift in Sources */,
 				576810D225C3F177002A61EA /* ViewController.swift in Sources */,
+				571DFE0F25C905320071BE5A /* DepartmentInfoVC.swift in Sources */,
 				576810CE25C3F177002A61EA /* AppDelegate.swift in Sources */,
 				5768110325C3F903002A61EA /* EmployeeListVC.swift in Sources */,
 				578021E725C7A97300CBB35B /* EmployeeDAO.swift in Sources */,
