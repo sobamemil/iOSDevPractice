@@ -16,6 +16,9 @@ class EmployeeListVC: UITableViewController {
     // SQLite 처리를 담당할 DAO 클래스
     var empDAO = EmployeeDAO()
     
+    // 임계점에 도달했을 때 나타날 배경 뷰. 노란 원 형태
+    var bgCircle: UIView!
+    
     // UI 초기화 함수
     func initUI() {
         // 내비게이션 타이틀용 레이블 속성 설정
@@ -43,6 +46,15 @@ class EmployeeListVC: UITableViewController {
         
         self.refreshControl?.tintColor = .clear
         self.refreshControl?.addSubview(self.loadingImg)
+        
+        // 배경 뷰 초기화 및 노란 원 형태를 위한 속성 설정
+        self.bgCircle = UIView()
+        self.bgCircle.backgroundColor = UIColor.yellow
+        self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
+        
+        // 배경 뷰를 refreshControl 객체에 추가하고, 로딩 이미지를 제일 위로 올림
+        self.refreshControl?.addSubview(self.bgCircle)
+        self.refreshControl?.bringSubviewToFront(self.loadingImg)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
