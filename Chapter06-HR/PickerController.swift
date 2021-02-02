@@ -11,7 +11,7 @@ class DepartPickerVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // 멤버 변수와 메소드가 작성될 영역
     let departDAO = DepartmentDAO() // DAO 객체
     var departList: [(departCd: Int, departTitle: String, departAddr: String)]! // 피커 뷰의 데이터 소스
-    var pickerView: UIPickerView // 피커 뷰 객체
+    var pickerView: UIPickerView! // 피커 뷰 객체
     
     // 현재 피커 뷰에 선택되어 있는 부서의 코드를 가져옴
     var selectedDepartCd: Int {
