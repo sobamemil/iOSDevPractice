@@ -39,7 +39,7 @@ class EmployeeListVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EMP_CELL")
         
         // 사원명 + 재직 상태 출력
-        cell?.textLabel?.text = rowData.empName + "(\(rowData.stateCd.desc())"
+        cell?.textLabel?.text = rowData.empName + "(\(rowData.stateCd.desc()))"
         cell?.textLabel?.font = UIFont.systemFont(ofSize: 14)
         
         cell?.detailTextLabel?.text = rowData.departTitle
@@ -118,6 +118,10 @@ class EmployeeListVC: UITableViewController {
         if empDAO.remove(empCd: empCd) {
             self.empList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // 내비게이션 타이틀에도 변경된 부서 정보를 반영
+            let navTitle = self.navigationItem.titleView as! UILabel
+            navTitle.text = "사원 목록 \n" + "총 \(self.empList.count) 개"
         }
     }
 }
