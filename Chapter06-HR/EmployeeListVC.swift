@@ -159,6 +159,16 @@ class EmployeeListVC: UITableViewController {
         
         // 당겨서 새로고침 기능 종료
         self.refreshControl?.endRefreshing()
+        
+        // 노란 원이 로딩 이미지를 중심으로 커지는 애니메이션
+        let distance = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+        UIView.animate(withDuration: 0.5) {
+            self.bgCircle.frame.size.width = 80
+            self.bgCircle.frame.size.height = 80
+            self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
+            self.bgCircle.center.y = distance / 2
+            self.bgCircle.layer.cornerRadius = (self.bgCircle?.frame.size.width)! / 2
+        }
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
