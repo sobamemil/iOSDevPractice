@@ -7,6 +7,9 @@
 
 import UIKit
 class EmployeeListVC: UITableViewController {
+    // 새로고침 컨트롤에 들어갈 이미지 뷰
+    var loadingImg: UIImageView!
+    
     // 데이터 소스를 저장할 멤버 변수
     var empList: [EmployeeDAO.EmployeeVO]!
     
@@ -31,8 +34,15 @@ class EmployeeListVC: UITableViewController {
         
         // 당겨서 새로고침 기능
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+//        self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
         self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+        
+        // 로딩 이미지 초기화 & 중앙 정렬
+        self.loadingImg = UIImageView(image: UIImage(named: "refresh"))
+        self.loadingImg.center.x = (self.refreshControl?.frame.width)! / 2
+        
+        self.refreshControl?.tintColor = .clear
+        self.refreshControl?.addSubview(self.loadingImg)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -137,5 +147,19 @@ class EmployeeListVC: UITableViewController {
         
         // 당겨서 새로고침 기능 종료
         self.refreshControl?.endRefreshing()
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 스크롤이 발생할 때마다 처리할 내용을 여기에 적을 예정
+        
+        // 당긴 거리
+        let distance = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+        
+        // center.y 좌표를 당긴 거리만큼 수정
+        self.loadingImg.center.y = distance / 2
+        
+        // 당긴 거리를 회전 각도로 반환하여 로딩 이미지에 설정
+        let ts = CGAffineTransform(rotationAngle: CGFloat(distance / 20))
+        self.loadingImg.transform = ts
     }
 }
