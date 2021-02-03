@@ -187,4 +187,11 @@ class EmployeeListVC: UITableViewController {
         // 배경 뷰의 중심 좌표 설정
         self.bgCircle.center.y = distance / 2
     }
+    
+    // 스크롤 뷰의 드래그가 끝났을 때 호출되는 메소드
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // 노란 원을 다시 초기화
+        self.bgCircle.frame.size.width = 0
+        self.bgCircle.frame.size.height = 0
+    }
 }
