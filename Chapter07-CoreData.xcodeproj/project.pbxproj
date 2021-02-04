@@ -14,6 +14,7 @@
 		57F35B5225CBC1B900F49F88 /* Chapter07_CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57F35B5025CBC1B900F49F88 /* Chapter07_CoreData.xcdatamodeld */; };
 		57F35B5425CBC1B900F49F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F35B5325CBC1B900F49F88 /* Assets.xcassets */; };
 		57F35B5725CBC1B900F49F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F35B5525CBC1B900F49F88 /* LaunchScreen.storyboard */; };
+		57F35B6025CBC39700F49F88 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F35B5F25CBC39700F49F88 /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		57F35B5325CBC1B900F49F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57F35B5625CBC1B900F49F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57F35B5825CBC1B900F49F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F35B5F25CBC39700F49F88 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				57F35B4925CBC1B900F49F88 /* SceneDelegate.swift */,
 				57F35B4B25CBC1B900F49F88 /* ViewController.swift */,
 				57F35B4D25CBC1B900F49F88 /* Main.storyboard */,
+				57F35B5F25CBC39700F49F88 /* ListVC.swift */,
 				57F35B5325CBC1B900F49F88 /* Assets.xcassets */,
 				57F35B5525CBC1B900F49F88 /* LaunchScreen.storyboard */,
 				57F35B5825CBC1B900F49F88 /* Info.plist */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57F35B4C25CBC1B900F49F88 /* ViewController.swift in Sources */,
+				57F35B6025CBC39700F49F88 /* ListVC.swift in Sources */,
 				57F35B4825CBC1B900F49F88 /* AppDelegate.swift in Sources */,
 				57F35B4A25CBC1B900F49F88 /* SceneDelegate.swift in Sources */,
 				57F35B5225CBC1B900F49F88 /* Chapter07_CoreData.xcdatamodeld in Sources */,
