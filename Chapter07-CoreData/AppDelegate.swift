@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CoreData
+import CoreData //CoreData 프레임워크 반입 구문
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
