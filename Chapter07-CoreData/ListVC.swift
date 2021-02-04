@@ -56,13 +56,34 @@ class ListVC: UITableViewController {
     }
     
     // 데이터 저장 버튼에 대한 액션 메소드
-    func add(_ sender: Any) {
+    @objc func add(_ sender: Any) {
+        let alert = UIAlertController(title: "게시글 등록", message: nil, preferredStyle: .alert)
         
+        // 입력 필드 추가(이름 & 전화번호)
+        alert.addTextField(configurationHandler: { (tf) in
+            tf.placeholder = "이름"
+        })
+        alert.addTextField() { $0.placeholder = "내용" }
+        
+        // 버튼 추가(Cancel & Save)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Save", style: .default) { (_) in
+            guard let title = alert.textFields?.first?.text, let contents = alert.textFields?.last?.text else {
+                return
+            }
+            
+            // 값을 저장하고, 성공이면 테이블 뷰를 리로드
+            if self.save(title: title, contents: contents) == true {
+                self.tableView.reloadData()
+            }
+        })
+        self.present(alert, animated: false, completion: nil)
     }
     
     // 화면 및 로직 초기화 메소드
     override func viewDidLoad() {
-        <#code#>
+        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add(_:)))
+        self.navigationItem.rightBarButtonItem = addBtn
     }
     
     // 테이블 뷰 데이터 소스용 프로토콜 메소드
