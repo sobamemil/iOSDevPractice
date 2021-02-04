@@ -116,6 +116,55 @@ class ListVC: UITableViewController {
         }
     }
     
+    func edit(object: NSManagedObject, title: String, contents: String) -> Bool {
+        // 앱 델리게이트 객체 참조
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // 관리 객체 컨텍스트 참조
+        let context = appDelegate.persistentContainer.viewContext
+        
+        // 관리 객체의 값을 수정
+        object.setValue(title, forKey: "title")
+        object.setValue(contents, forKey: "contents")
+        object.setValue(Date(), forKey: "regdate")
+        
+        // 영구 저장소에 반영
+        do {
+            try context.save()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 선택된 행에 해당하는 데이터 가져오기
+        let object = self.list[indexPath.row]
+        let title = object.value(forKey: "title") as? String
+        let contents = object.value(forKey: "contents") as? String
+        
+        let alert = UIAlertController(title: "게시글 수정", message: nil, preferredStyle: .alert)
+        
+        // 입력 필드 추가(기존 값 입력)
+        alert.addTextField(configurationHandler: { $0.text = title})
+        alert.addTextField(configurationHandler: { $0.text = contents})
+        
+        // 버튼 추가
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_) in
+            guard let title = alert.textFields?.first?.text, let contents = alert.textFields?.last?.text else {
+                return
+            }
+            
+            // 값을 수정하는 메소드를 호출하고, 그 결과가 성공이면 테이블 뷰를 리로드
+            if self.edit(object: object, title: title, contents: contents) == true {
+                self.tableView.reloadData()
+            }
+        }))
+        self.present(alert, animated: false, completion: nil)
+    }
+    
     // 화면 및 로직 초기화 메소드
     override func viewDidLoad() {
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add(_:)))
