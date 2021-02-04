@@ -80,6 +80,42 @@ class ListVC: UITableViewController {
         self.present(alert, animated: false, completion: nil)
     }
     
+    // 데이터를 삭제할 메소드
+    func delete(object: NSManagedObject) -> Bool {
+        // 앱 델리게이트 객체 참조
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // 관리 객체 컨텍스트 참조
+        let context = appDelegate.persistentContainer.viewContext
+        
+        // 컨텍스트로부터 해당 객체 삭제
+        context.delete(object)
+        
+        // 영구 저장소에 커밋
+        do {
+            try context.save()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
+    
+    // .delete가 기본 타입이긴 하지만 예기치 않게 기본 스펙이 변경될 경우를 대비하여 명시
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let object = self.list[indexPath.row] // 삭제할 대상 객체
+        
+        if self.delete(object: object) {
+            // 코어 데이터에서 삭제되고 나면 배열 목록과 테이블 뷰의 행도 삭제
+            self.list.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     // 화면 및 로직 초기화 메소드
     override func viewDidLoad() {
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add(_:)))
