@@ -30,6 +30,41 @@ class ListVC: UITableViewController {
         return result
     }
     
+    // 데이터를 저장할 메소드
+    func save(title: String, contents: String) -> Bool {
+        // 앱 델리게이트 객체 참조
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // 관리 객체 컨텍스트 참조
+        let context = appDelegate.persistentContainer.viewContext
+        
+        // 관리 객체 생성 & 값을 설정
+        let object = NSEntityDescription.insertNewObject(forEntityName: "Board", into: context)
+        object.setValue(title, forKey: "title")
+        object.setValue(contents, forKey: "contents")
+        object.setValue(Date(), forKey: "regdate")
+        
+        // 영구 저장소에 커밋되고 나면 list 프로퍼티에 추가
+        do {
+            try context.save()
+            self.list.append(object)
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
+    
+    // 데이터 저장 버튼에 대한 액션 메소드
+    func add(_ sender: Any) {
+        
+    }
+    
+    // 화면 및 로직 초기화 메소드
+    override func viewDidLoad() {
+        <#code#>
+    }
+    
     // 테이블 뷰 데이터 소스용 프로토콜 메소드
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.list.count
