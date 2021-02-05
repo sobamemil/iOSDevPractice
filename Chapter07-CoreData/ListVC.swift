@@ -14,6 +14,14 @@ class ListVC: UITableViewController {
         return self.fetch()
     }()
     
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let object = self.list[indexPath.row]
+        let uvc = self.storyboard?.instantiateViewController(identifier: "LogVC") as! LogVC
+        uvc.board = (object as! BoardMO)
+        
+        self.show(uvc, sender: self)
+    }
+    
     // 데이터를 읽어올 메소드
     func fetch() -> [NSManagedObject] {
         // 앱 델리게이트 객체 참조
