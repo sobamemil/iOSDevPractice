@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		576588FB25CCF97C001E2735 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576588FA25CCF97C001E2735 /* LogVC.swift */; };
 		57F35B4825CBC1B900F49F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F35B4725CBC1B900F49F88 /* AppDelegate.swift */; };
 		57F35B4A25CBC1B900F49F88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F35B4925CBC1B900F49F88 /* SceneDelegate.swift */; };
 		57F35B4C25CBC1B900F49F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F35B4B25CBC1B900F49F88 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		576588FA25CCF97C001E2735 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
 		57F35B4425CBC1B900F49F88 /* Chapter07-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter07-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F35B4725CBC1B900F49F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57F35B4925CBC1B900F49F88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				57F35B4925CBC1B900F49F88 /* SceneDelegate.swift */,
 				57F35B4B25CBC1B900F49F88 /* ViewController.swift */,
 				57F35B4D25CBC1B900F49F88 /* Main.storyboard */,
+				576588FA25CCF97C001E2735 /* LogVC.swift */,
 				57F35B5F25CBC39700F49F88 /* ListVC.swift */,
 				57F35B5325CBC1B900F49F88 /* Assets.xcassets */,
 				57F35B5525CBC1B900F49F88 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57F35B4C25CBC1B900F49F88 /* ViewController.swift in Sources */,
+				576588FB25CCF97C001E2735 /* LogVC.swift in Sources */,
 				57F35B6025CBC39700F49F88 /* ListVC.swift in Sources */,
 				57F35B4825CBC1B900F49F88 /* AppDelegate.swift in Sources */,
 				57F35B4A25CBC1B900F49F88 /* SceneDelegate.swift in Sources */,
