@@ -7,7 +7,6 @@
 // API 테스트
 
 import UIKit
-import Alamofire
 
 class ViewController: UIViewController {
     @IBOutlet weak var currentTime: UILabel!
