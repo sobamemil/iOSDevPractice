@@ -4,6 +4,7 @@
 //
 //  Created by 심찬영 on 2021/02/04.
 //
+// 목록에 대한 뷰 컨트롤러
 
 import UIKit
 import CoreData
