@@ -889,3 +889,39 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 //optionalDictionary?["numberArray"] = optionalArray
 //optionalDictionary?["numberArray"]?[2] // 3
 
+
+//// 빠른 종료 guard
+ /*
+    guard Bool 타입의 값 else {
+        예외사항 실행문
+        제어문 전환 명령어
+    }
+ */
+
+func greet(_ person: [String : String]) {
+    guard let name: String = person["name"] else {
+        return
+    }
+    
+    print("Hello \(name)!")
+    
+    guard let location: String = person["location"] else {
+        print("I hope the weather is nice near you")
+        return
+    }
+    
+    print("I hope the weather is nice in \(location)")
+}
+
+var personInfo: [String : String] = [String : String]()
+personInfo["name"] = "Jenny"
+
+greet(personInfo) // Hello Jenny!
+// I hope weather is nice near you
+
+personInfo["location"] = "Korea"
+greet(personInfo)
+// Hello Jenny
+// I hope the weather is nice in Korea
+
+
