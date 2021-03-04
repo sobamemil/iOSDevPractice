@@ -898,30 +898,37 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
     }
  */
 
-func greet(_ person: [String : String]) {
-    guard let name: String = person["name"] else {
+//func greet(_ person: [String : String]) {
+//    guard let name: String = person["name"] else {
+//        return
+//    }
+//
+//    print("Hello \(name)!")
+//
+//    guard let location: String = person["location"] else {
+//        print("I hope the weather is nice near you")
+//        return
+//    }
+//
+//    print("I hope the weather is nice in \(location)")
+//}
+//
+//var personInfo: [String : String] = [String : String]()
+//personInfo["name"] = "Jenny"
+//
+//greet(personInfo) // Hello Jenny!
+//// I hope weather is nice near you
+//
+//personInfo["location"] = "Korea"
+//greet(personInfo)
+//// Hello Jenny
+//// I hope the weather is nice in Korea
+
+func enterClub(name: String?, age: Int?) {
+    guard let name: String = name, let age: Int = age, age > 19, name.isEmpty == false else {
+        print("You are too young to enter the club")
         return
     }
     
-    print("Hello \(name)!")
-    
-    guard let location: String = person["location"] else {
-        print("I hope the weather is nice near you")
-        return
-    }
-    
-    print("I hope the weather is nice in \(location)")
+    print("Welcome \(name)")
 }
-
-var personInfo: [String : String] = [String : String]()
-personInfo["name"] = "Jenny"
-
-greet(personInfo) // Hello Jenny!
-// I hope weather is nice near you
-
-personInfo["location"] = "Korea"
-greet(personInfo)
-// Hello Jenny
-// I hope the weather is nice in Korea
-
-
