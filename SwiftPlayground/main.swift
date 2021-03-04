@@ -706,7 +706,7 @@ import Foundation
 //print(testStruct.self)
 
 // MARK: - 함수형 프로그래밍
-//let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
+let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 
 //func backwards(first: String, second: String) -> Bool {
 //    print("\(first) \(second) 비교중")
@@ -747,4 +747,30 @@ import Foundation
 //    // failure closure
 //}
 
+//// 클로저 표현 간소화
+//let reversed: [String] = names.sorted { (first, second) in
+//    return first > second
+//}
 
+//let reversed: [String] = names.sorted {
+//    return $0 > $1
+//}
+
+//let reversed: [String] = names.sorted { $0 > $1 }
+
+//let reversed: [String] = names.sorted(by: >)
+
+func makeIncrementer(forIncrement amount: Int) -> (() -> Int) {
+    var runningTotal = 0
+    func incrementer() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
+
+let incrementByTwo: (() -> Int) = makeIncrementer(forIncrement: 2)
+
+let first: Int = incrementByTwo() // 2
+let second: Int = incrementByTwo() // 4
+let third: Int = incrementByTwo() // 6
