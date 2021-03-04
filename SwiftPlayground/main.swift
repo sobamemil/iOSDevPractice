@@ -705,3 +705,46 @@ import Foundation
 //var testStruct: TestStruct = TestStruct(상수: "상수", 변수: 1)
 //print(testStruct.self)
 
+// MARK: - 함수형 프로그래밍
+//let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
+
+//func backwards(first: String, second: String) -> Bool {
+//    print("\(first) \(second) 비교중")
+//    return first > second
+//}
+//
+//let reversed: [String] = names.sorted(by: backwards(first:second:))
+//print(reversed)
+
+//let reversed: [String] = names.sorted(by: { (first: String, second: String) -> Bool in
+//    return first > second
+//})
+//print(reversed)
+
+
+//// 후행 클로저 사용
+//let reversed: [String] = names.sorted() { (first: String, second: String) -> Bool in
+//    return first > second
+//}
+
+//// 소괄호 생략 가능
+//let reversed: [String] = names.sorted { (first: String, second: String) -> Bool in
+//    return first > second
+//}
+
+//func doSomething(do: (String) -> Void,
+//                 onSuccess: (Any) -> Void,
+//                 onFailure: (Error) -> Void) {
+//    // do something...
+//}
+//
+//// 다중 후행 클로저 사용
+//doSomething { (someString: String) in
+//    // do closure
+//} onSuccess: { (result: Any) in
+//    // success closure
+//} onFailure: { (error: Error) in
+//    // failure closure
+//}
+
+
