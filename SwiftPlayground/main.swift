@@ -760,17 +760,132 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 
 //let reversed: [String] = names.sorted(by: >)
 
-func makeIncrementer(forIncrement amount: Int) -> (() -> Int) {
-    var runningTotal = 0
-    func incrementer() -> Int {
-        runningTotal += amount
-        return runningTotal
-    }
-    return incrementer
-}
+//func makeIncrementer(forIncrement amount: Int) -> (() -> Int) {
+//    var runningTotal = 0
+//    func incrementer() -> Int {
+//        runningTotal += amount
+//        return runningTotal
+//    }
+//    return incrementer
+//}
+//
+//let incrementByTwo: (() -> Int) = makeIncrementer(forIncrement: 2)
+//
+//let first: Int = incrementByTwo() // 2
+//let second: Int = incrementByTwo() // 4
+//let third: Int = incrementByTwo() // 6
 
-let incrementByTwo: (() -> Int) = makeIncrementer(forIncrement: 2)
+// MARK:- 옵셔널 체이닝과 빠른 종료
 
-let first: Int = incrementByTwo() // 2
-let second: Int = incrementByTwo() // 4
-let third: Int = incrementByTwo() // 6
+//class Room { // 호실
+//    var number: Int // 호실 번호
+//
+//    init(number: Int) {
+//        self.number = number
+//    }
+//}
+//
+//class Building { // 건물
+//    var name: String // 건물 이름
+//    var room: Room? // 호실 정보
+//
+//    init(name: String) {
+//        self.name = name
+//    }
+//}
+//
+//struct Address { // 주소
+//    var province: String // 광역시/도
+//    var city: String // 시/군/구
+//    var street: String // 도로명
+//    var building: Building? // 건물
+//    var detailAddress: String? // 건물 외 상세 주소
+//
+//    init(province: String, city: String, street: String) {
+//        self.province = province
+//        self.city = city
+//        self.street = street
+//    }
+//
+//    func fullAddress() -> String? {
+//        var restAddress: String? = nil
+//
+//        if let buildingInfo: Building = self.building {
+//            restAddress = buildingInfo.name
+//        } else if let detail = self.detailAddress {
+//            restAddress = detail
+//        }
+//
+//        if let rest: String = restAddress {
+//            var fullAddress: String = self.province
+//
+//            fullAddress += " " + self.city
+//            fullAddress += " " + self.street
+//            fullAddress += " " + rest
+//
+//            return fullAddress
+//        } else {
+//            return nil
+//        }
+//    }
+//
+//    func printAddress() {
+//        if let address: String = self.fullAddress() {
+//            print(address)
+//        }
+//    }
+//}
+//
+//class Person { // 사람
+//    var name: String // 이름
+//    var address: Address? // 주소
+//
+//    init(name: String) {
+//        self.name = name
+//    }
+//}
+//
+//let sim: Person = Person(name: "sim")
+//
+//var roomNumber: Int? = nil
+//
+//if let simaddr: Address = sim.address {
+//    if let simBuilding: Building = simaddr.building {
+//        if let simRoom: Room = simBuilding.room {
+//            roomNumber = simRoom.number
+//        }
+//    }
+//}
+//
+//if let number: Int = roomNumber {
+//    print(number)
+//} else {
+//    print("Can not find room number")
+//}
+//
+//// 동일한 코드
+//if let roomNumber: Int = sim.address?.building?.room?.number {
+//    print(roomNumber)
+//} else {
+//    print("Can not find room number")
+//}
+//
+//// 옵셔널 체이닝을 통한 값 할당 시도
+//sim.address = Address(province: "**도", city: "**시", street: "**길")
+//sim.address?.building = Building(name: "**빌딩")
+//sim.address?.building?.room = Room(number: 0)
+//sim.address?.building?.room?.number = 505
+//print(sim.address?.building?.room?.number) // nil
+//
+//print(sim.address?.fullAddress()?.isEmpty)
+//sim.address?.printAddress()
+
+
+//// 옵셔널 체이닝을 통한 서브스크립트 호출
+//let optionalArray: [Int]? = [1, 2, 3]
+//optionalArray?[1] // 2
+//
+//var optionalDictionary: [String : [Int]]? = [String : [Int]]()
+//optionalDictionary?["numberArray"] = optionalArray
+//optionalDictionary?["numberArray"]?[2] // 3
+
