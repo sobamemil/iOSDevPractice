@@ -979,12 +979,23 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 //print(doubledNumbers)
 
 
-let evenNumbers: [Int] = [0, 2, 4, 6, 8]
-let oddNumbers: [Int] = [0, 1, 3, 5, 7]
-let multiplyTwo: (Int) -> Int = { $0 * 2 }
+//let evenNumbers: [Int] = [0, 2, 4, 6, 8]
+//let oddNumbers: [Int] = [0, 1, 3, 5, 7]
+//let multiplyTwo: (Int) -> Int = { $0 * 2 }
+//
+//let doubledEvenNumbers = evenNumbers.map(multiplyTwo)
+//print(doubledEvenNumbers)
+//
+//let doubledOddNumbers = oddNumbers.map(multiplyTwo)
+//print(doubledOddNumbers)
 
-let doubledEvenNumbers = evenNumbers.map(multiplyTwo)
-print(doubledEvenNumbers)
+// 필터 메소드 사용
+let numbers: [Int] = [0, 1, 2, 3, 4, 5]
 
-let doubledOddNumbers = oddNumbers.map(multiplyTwo)
-print(doubledOddNumbers)
+let evenNumbers: [Int] = numbers.filter { (number: Int) -> Bool in
+    return number % 2 == 0
+}
+print(evenNumbers)
+
+let oddNumbers: [Int] = numbers.filter { $0 % 2 == 1 }
+print(oddNumbers)
