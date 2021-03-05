@@ -940,41 +940,51 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 //    // 여기에 들어올 제어문 전환 명령은 딱히 없습니다. 오류!
 //}
 
-let numbers: [Int] = [0, 1, 2, 3, 4]
+//let numbers: [Int] = [0, 1, 2, 3, 4]
+//
+//var doubledNumbers: [Int] = [Int]()
+//var strings: [String] = [String]()
+//
+//// for 구문 사용
+//for number in numbers {
+//    doubledNumbers.append(number * 2)
+//    strings.append("\(number)")
+//}
+//
+//print(doubledNumbers)
+//print("\(strings)")
+//
+//// map 메소드 사용
+//doubledNumbers = numbers.map({ (number: Int) -> Int in
+//    return number * 2
+//})
+//
+//strings = numbers.map { (number: Int) -> String in
+//    return "\(number)"
+//}
+//
+//print(doubledNumbers)
+//print(strings)
+//
+//// 매개변수 및 반환 타입 생략
+//doubledNumbers = numbers.map({ return $0 * 2})
+//print(doubledNumbers)
+//
+//// 반환 키워드 생략
+//doubledNumbers = numbers.map({$0 * 2})
+//print(doubledNumbers)
+//
+//// 후행 클로저 사용
+//doubledNumbers = numbers.map {$0 * 2}
+//print(doubledNumbers)
 
-var doubledNumbers: [Int] = [Int]()
-var strings: [String] = [String]()
 
-// for 구문 사용
-for number in numbers {
-    doubledNumbers.append(number * 2)
-    strings.append("\(number)")
-}
+let evenNumbers: [Int] = [0, 2, 4, 6, 8]
+let oddNumbers: [Int] = [0, 1, 3, 5, 7]
+let multiplyTwo: (Int) -> Int = { $0 * 2 }
 
-print(doubledNumbers)
-print("\(strings)")
+let doubledEvenNumbers = evenNumbers.map(multiplyTwo)
+print(doubledEvenNumbers)
 
-// map 메소드 사용
-doubledNumbers = numbers.map({ (number: Int) -> Int in
-    return number * 2
-})
-
-strings = numbers.map { (number: Int) -> String in
-    return "\(number)"
-}
-
-print(doubledNumbers)
-print(strings)
-
-// 매개변수 및 반환 타입 생략
-doubledNumbers = numbers.map({ return $0 * 2})
-print(doubledNumbers)
-
-// 반환 키워드 생략
-doubledNumbers = numbers.map({$0 * 2})
-print(doubledNumbers)
-
-// 후행 클로저 사용
-doubledNumbers = numbers.map {$0 * 2}
-print(doubledNumbers)
-
+let doubledOddNumbers = oddNumbers.map(multiplyTwo)
+print(doubledOddNumbers)
