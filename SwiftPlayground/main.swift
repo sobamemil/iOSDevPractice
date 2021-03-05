@@ -992,10 +992,20 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 // 필터 메소드 사용
 let numbers: [Int] = [0, 1, 2, 3, 4, 5]
 
-let evenNumbers: [Int] = numbers.filter { (number: Int) -> Bool in
+//let evenNumbers: [Int] = numbers.filter { (number: Int) -> Bool in
+//    return number % 2 == 0
+//}
+//print(evenNumbers)
+//
+//let oddNumbers: [Int] = numbers.filter { $0 % 2 == 1 }
+//print(oddNumbers)
+
+let mappedNumbers: [Int] = numbers.map{ $0 + 3 }
+
+let evenNumbers: [Int] = mappedNumbers.filter{ (number: Int) -> Bool in
     return number % 2 == 0
 }
 print(evenNumbers)
 
-let oddNumbers: [Int] = numbers.filter { $0 % 2 == 1 }
+let oddNumbers: [Int] = numbers.map{ $0 + 3 }.filter{ $0 % 2 == 1}
 print(oddNumbers)
