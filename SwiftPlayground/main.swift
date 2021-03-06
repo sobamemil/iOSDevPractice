@@ -706,7 +706,7 @@ import Foundation
 //print(testStruct.self)
 
 // MARK: - 함수형 프로그래밍
-let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
+//let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 
 //func backwards(first: String, second: String) -> Bool {
 //    print("\(first) \(second) 비교중")
@@ -1016,3 +1016,39 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 //// 2.
 // public func reduce<Result>(into initialResult: Result, _ updateAccumulatingResult: (inout Result, Element) throws -> ()) rethrows -> Result
 
+let numbers: [Int] = [1, 2, 3]
+
+//// 첫 번째 형태인 reduce(_:_:) 메소드의 사용
+
+//// 초깃값이 0이고 정수 배열의 모든 값을 더함
+//var sum: Int = numbers.reduce(0, { (result: Int, next: Int) -> Int in
+//    print("\(result) + \(next)")
+//    // 0 + 1
+//    // 1 + 2
+//    // 2 + 3
+//    return result + next
+//})
+//
+//print(sum) // 6
+//
+//// 초깃값이 0이고 정수 배열의 모든 값을 뺌
+//let subtract: Int = numbers.reduce(0, { $0 - $1 })
+//print(subtract)
+//
+//// 초깃값이 3이고 정수 배열의 모든 값을 더함
+//let sumFromThree: Int = numbers.reduce(3) { (result: Int, next: Int) in
+//    return result + next
+//}
+//print(sumFromThree) // 9
+//
+//// 초깃값이 3이고 정수 배열의 모든 값을 뺌
+//var subtractFromThree: Int = numbers.reduce(3) { $0 - $1 }
+//print(subtractFromThree) // -3
+
+//// 문자열 배열을 reduce(_:_:) 메소드를 이용해 연결
+//let names: [String] = ["Chope", "Jay", "Joker", "Nova"]
+//
+//let reduceNames: String = names.reduce("sim's friends = ") {
+//    $0 + ", " + $1
+//}
+//print(reduceNames)
