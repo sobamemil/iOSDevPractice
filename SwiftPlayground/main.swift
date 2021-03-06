@@ -989,8 +989,8 @@ let names: [String] = ["wizplan", "eric", "yagom", "jenny"]
 //let doubledOddNumbers = oddNumbers.map(multiplyTwo)
 //print(doubledOddNumbers)
 
-// 필터 메소드 사용
-let numbers: [Int] = [0, 1, 2, 3, 4, 5]
+//// 필터 메소드 사용
+//let numbers: [Int] = [0, 1, 2, 3, 4, 5]
 
 //let evenNumbers: [Int] = numbers.filter { (number: Int) -> Bool in
 //    return number % 2 == 0
@@ -1000,12 +1000,19 @@ let numbers: [Int] = [0, 1, 2, 3, 4, 5]
 //let oddNumbers: [Int] = numbers.filter { $0 % 2 == 1 }
 //print(oddNumbers)
 
-let mappedNumbers: [Int] = numbers.map{ $0 + 3 }
+//let mappedNumbers: [Int] = numbers.map{ $0 + 3 }
+//
+//let evenNumbers: [Int] = mappedNumbers.filter{ (number: Int) -> Bool in
+//    return number % 2 == 0
+//}
+//print(evenNumbers)
+//
+//let oddNumbers: [Int] = numbers.map{ $0 + 3 }.filter{ $0 % 2 == 1}
+//print(oddNumbers)
 
-let evenNumbers: [Int] = mappedNumbers.filter{ (number: Int) -> Bool in
-    return number % 2 == 0
-}
-print(evenNumbers)
+//// 두 가지 형태의 리듀스
+//// 1.
+// public func reduce<Result>(_ initialResult: Result, _ nextPartialResult: (Result, Element) throws -> Result) rethrows -> Result
+//// 2.
+// public func reduce<Result>(into initialResult: Result, _ updateAccumulatingResult: (inout Result, Element) throws -> ()) rethrows -> Result
 
-let oddNumbers: [Int] = numbers.map{ $0 + 3 }.filter{ $0 % 2 == 1}
-print(oddNumbers)
