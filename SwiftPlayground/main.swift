@@ -1126,6 +1126,10 @@ import Foundation
 //}
 //print(result)
 
-func addThree(_ num: Int) -> Int {
-    return num + 3
-}
+//func addThree(_ num: Int) -> Int {
+//    return num + 3
+//}
+//
+//addThree(2) // 5
+//addThree(Optional(2)) // error
+
