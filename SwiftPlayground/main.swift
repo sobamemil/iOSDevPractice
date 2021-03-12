@@ -1133,3 +1133,9 @@ import Foundation
 //addThree(2) // 5
 //addThree(Optional(2)) // error
 
+// 옵셔널에 맵 메소드와 클로저 사용
+var value: Int? = 2
+value.map{ $0 + 3 } // Optional(5)
+value = nil
+value.map{ $0 + 3 } // nil(== Optional<Int>.none
+
