@@ -1139,3 +1139,12 @@ import Foundation
 //value = nil
 //value.map{ $0 + 3 } // nil(== Optional<Int>.none
 
+// 옵셔널의 맵 메소드
+extension Optional {
+    func map<U>(f: (Wrapped) -> U) -> U? {
+        switch self {
+            case .some(let x): return f(x)
+            case .none: return .none
+        }
+    }
+}
