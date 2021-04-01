@@ -3,6 +3,7 @@
 //
 //  Created by 심찬영 on 2020/11/11.
 //
+// 스위프트 언어 학습
 
 import Foundation
 
@@ -1139,12 +1140,12 @@ import Foundation
 //value = nil
 //value.map{ $0 + 3 } // nil(== Optional<Int>.none
 
-// 옵셔널의 맵 메소드
-extension Optional {
-    func map<U>(f: (Wrapped) -> U) -> U? {
-        switch self {
-            case .some(let x): return f(x)
-            case .none: return .none
-        }
-    }
-}
+//// 옵셔널의 맵 메소드
+//extension Optional {/Users/sobamemil/Desktop/SwiftPlayground/SwiftPlayground/main.swift
+//    func map<U>(f: (Wrapped) -> U) -> U? {
+//        switch self {
+//            case .some(let x): return f(x)
+//            case .none: return .none
+//        }
+//    }
+//}
