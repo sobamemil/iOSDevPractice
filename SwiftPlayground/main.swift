@@ -1151,3 +1151,23 @@ import Foundation
 //}
 
  
+
+//// 클로저를 전달인자로 전달.
+//var customersInLine: [String] = ["1", "2", "3", "4", "5"]
+//
+//func serveCustomer(_ customerProvider: () -> String) {
+//    print("Now Serving \(customerProvider())!")
+//}
+//
+//serveCustomer( { customersInLine.removeFirst() })
+
+//// 위의 코드를 자동 클로저를 사용해 전달인자로 클로저가 아닌 String을 전달
+//var customersInLine: [String] = ["11", "22", "33", "44", "55"]
+//
+//func serveCustomer(_ customerProvider: @autoclosure () -> String) {
+//    print("Now Serving \(customerProvider())!")
+//}
+//
+//serveCustomer( customersInLine.removeFirst() ) // String이 자동으로 클로저로 변환됨.
+
+
