@@ -1171,3 +1171,49 @@ import Foundation
 //serveCustomer( customersInLine.removeFirst() ) // String이 자동으로 클로저로 변환됨.
 
 
+//let numbers: [Int] = [1, 2, 3]
+//// reduce(_:_:) 메서드의 활용
+//// 초깃값이 0이고 정수 배열의 모든 값을 더함.
+//var sum: Int = numbers.reduce(0, { (result: Int, next: Int) -> Int in
+//    print("\(result) + \(next)")
+//    // 0 + 1
+//    // 1 + 2
+//    // 3 + 3
+//    return result + next
+//})
+//print(sum)
+//
+//// 문자열 배열을 reduce(_:_:) 메서드를 이용해 연결
+//let names: [String] = ["Chope", "Jay", "Joker", "Nova"]
+//
+//let reducedNames: String = names.reduce("yagom's friend : ") {
+//    return $0 + ", " + $1
+//}
+//print(reducedNames)
+
+// reduce(into:_:) 메서드의 사용
+// 초깃값이 0이고 정수 배열의 모든 값을 더합니다.
+// 첫 번째 리듀스 형태와 달리 클로저의 값을 반환하지 않고 내부에서 직접 이전 값을 변경한다는 점이 다름
+
+//let numbers: [Int] = [1, 2, 3]
+//var sum: Int
+//sum = numbers.reduce(into: 0, { (result: inout Int, next: Int) in
+//    print("\(result) + \(next)")
+//    // 0 + 1
+//    // 1 + 2
+//    // 3 + 3
+//    result += next
+//})
+//
+//print(sum) // 6
+//
+//
+//let subtractFromThree = numbers.reduce(into: 3, {
+//    print("\($0) - \($1)")
+//          // 3 - 1
+//          // 2 - 2
+//          // 0 - 3
+//          $0 -= $1
+//})
+//    print(subtractFromThree)
+
