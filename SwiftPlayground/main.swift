@@ -1217,3 +1217,7 @@ import Foundation
 //})
 //    print(subtractFromThree)
 
+var value: Int? = 2
+var value2: Int? = nil
+print(value.map{ $0 + 3 })
+print(value2.map{ $0 + 3})
