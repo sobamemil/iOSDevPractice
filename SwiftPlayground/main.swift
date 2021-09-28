@@ -1217,7 +1217,57 @@ import Foundation
 //})
 //    print(subtractFromThree)
 
-var value: Int? = 2
-var value2: Int? = nil
-print(value.map{ $0 + 3 })
-print(value2.map{ $0 + 3})
+//var value: Int? = 2
+//var value2: Int? = nil
+//print(value.map{ $0 + 3 })
+//print(value2.map{ $0 + 3})
+
+
+//func doubledEven(_ num: Int) -> Int? {
+//    if num.isMultiple(of: 2) {
+//        return num * 2
+//    }
+//    return nil
+//}
+//
+//print(Optional(3).flatMap(doubledEven))
+//// nil( ===Optional<Int>.none)
+
+class Person {
+    var name: String = ""
+    var age: Int = 0
+    
+    var introduction: String {
+        return "이름 : \(name). 나이 : /(age)"
+    }
+    
+    func speak() {
+        print("가나다라마바사")
+    }
+    
+    class func introduceClass() -> String {
+        return "인류의 소원은 평화입니다."
+    }
+}
+
+class Student: Person {
+    var grade: String = "F"
+    
+    func study() {
+        print("Study hard...")
+    }
+    
+    override func speak() {
+        print("저는 학생입니다.")
+    }
+}
+    
+let chanyeong: Person = Person()
+chanyeong.speak() // 가마다라마바사
+
+let hong: Student = Student()
+hong.speak() // 저는 학생입니다.
+
+print(Person.introduceClass()) // 인류의 소원은 평화입니다.
+print(Student.introduceClass()) // 인류의 소원은 평화입니다.
+
