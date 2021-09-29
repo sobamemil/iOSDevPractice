@@ -1233,41 +1233,81 @@ import Foundation
 //print(Optional(3).flatMap(doubledEven))
 //// nil( ===Optional<Int>.none)
 
+//class Person {
+//    var name: String = ""
+//    var age: Int = 0
+//
+//    var introduction: String {
+//    func speak() {
+//        print("가나다라마바사")
+//    }
+//
+//    class func introduceClass() -> String {
+//        return "인류의 소원은 평화입니다."
+//    }
+//}
+//
+//class Student: Person {
+//    var grade: String = "F"
+//
+//    func study() {
+//        print("Study hard...")
+//    }
+//
+//    override func speak() {
+//        print("저는 학생입니다.")
+//    }
+//}
+//
+//let chanyeong: Person = Person()
+//chanyeong.speak() // 가마다라마바사
+//
+//let hong: Student = Student()
+//hong.speak() // 저는 학생입니다.
+//
+//print(Person.introduceClass()) // 인류의 소원은 평화입니다.
+//print(Student.introduceClass()) // 인류의 소원은 평화입니다.
+
 class Person {
     var name: String = ""
     var age: Int = 0
+    var koreanAge: Int {
+        return self.age + 1
+    }
     
     var introduction: String {
-        return "이름 : \(name). 나이 : /(age)"
-    }
-    
-    func speak() {
-        print("가나다라마바사")
-    }
-    
-    class func introduceClass() -> String {
-        return "인류의 소원은 평화입니다."
+        return "이름 : \(name). 나이: \(age)"
     }
 }
 
 class Student: Person {
     var grade: String = "F"
     
-    func study() {
-        print("Study hard...")
+    override var introduction: String {
+        return super.introduction + " " + "학점 : \(self.grade)"
     }
     
-    override func speak() {
-        print("저는 학생입니다.")
+    override var koreanAge: Int {
+        get {
+            return super.koreanAge
+        }
+        
+        set {
+            self.age = newValue - 1
+        }
     }
 }
-    
-let chanyeong: Person = Person()
-chanyeong.speak() // 가마다라마바사
 
-let hong: Student = Student()
-hong.speak() // 저는 학생입니다.
+let yagom: Person = Person()
+yagom.name = "yagom"
+yagom.age = 55
+yagom.koreanAge = 56 // 오류 발생
+print(yagom.introduction) // 이름 : yagom. 나이 : 55
+print(yagom.koreanAge) // 56
 
-print(Person.introduceClass()) // 인류의 소원은 평화입니다.
-print(Student.introduceClass()) // 인류의 소원은 평화입니다.
-
+let jay: Student = Student()
+jay.name = "jay"
+jay.age = 14
+jay.koreanAge = 15
+print(jay.introduction) // 이름 : jay, 나이 : 14 학점 : F
+print(jay.koreanAge) // 15
